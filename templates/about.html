@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block header %}
+<header><a href="/" style="color: black;">EGM.</a></header>
+{% endblock %}
+
+{% block bar %}
+<nav class="top-bar" data-topbar>
+  <section class="top-bar-section">
+    <ul class="center">
+      <li class="active"><a href="/about">ABOUT</a></li>
+      <li class="divider">|</li>
+      <li><a href="/work">WORK</a></li>
+      <li class="divider">|</li>
+      <li><a href="/events">EVENTS</a></li>
+      <li class="divider">|</li>
+      <li><a href="/contact">CONTACT</a></li>
+    </ul>
+  </section>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+<div class="large-8 columns large-offset-2 column">
+  <div class="bio-image-container">
+    <img id="bio" src="{{ url_for('static', filename='img/aboutpic.jpg') }}" alt="Ellene's image">
+  </div>
+  <div class="bio-text">
+    <p>{{ bio_text }}</p>
+  </div>
+  <br>
+  <div class="cv">
+
+
+    Click <a href="{{ url_for('static', filename='pdf/ElleneGlennMoore 02152015.pdf') }}" alt="Ellene's CV">here</a> to view Ellene’s curriculum vitae.
+  </div>
+
+</div>
+<script type="text/javascript" charset="utf-8">
+    function markdown() {
+        var bioHTML = $('.bio-text').text();
+        var bioMarkdown = mmd(bioHTML);
+        $('.bio-text').html(bioMarkdown);
+    }
+    markdown();
+</script>
+{% endblock %}

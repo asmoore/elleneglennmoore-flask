@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block header %}
+<header><a href="/" style="color: black;">EGM.</a></header>
+{% endblock %}
+
+{% block bar %}
+<nav class="top-bar" data-topbar>
+  <section class="top-bar-section">
+    <ul class="center">
+      <li><a href="/about">ABOUT</a></li>
+      <li class="divider">|</li>
+      <li><a href="/work">WORK</a></li>
+      <li class="divider">|</li>
+      <li class="active"><a href="/events">EVENTS</a></li>
+      <li class="divider">|</li>
+      <li><a href="/contact">CONTACT</a></li>
+    </ul>
+  </section>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="large-8 columns large-offset-2 column">
+  {% for event, up in events_and_upcoming_reversed %}
+    {% if up %}
+    <h2 id="event-title">{{ event.event_title }}</h2>
+    <div id="date-header">{{ event.event_date_text }}</div>
+    <div id="event-description">{{ event.event_description }}</div>
+    {% endif %}
+  {% endfor %}
+  <br>
+  <h3>Past Events</h3>
+  {% for event, up in events_and_upcoming %}
+    {% if not up %}
+    <h2 id="event-title">{{ event.event_title }}</h2>
+    <div id="date-header">{{ event.event_date_text }}</div>
+    <div id="event-description">{{ event.event_description }}</div>
+    {% endif %}
+  {% endfor %}
+
+</div><!--/col-->
+
+<script type="text/javascript" charset="utf-8">
+    $('[id=event-title]').each(function( index ) {
+        var strHTML = $( this ).text();
+        var strMarkdown = mmd(strHTML);
+        $( this ).html(strMarkdown);
+    }); 
+    $('[id=event-description]').each(function( index ) {
+        var strHTML = $( this ).text();
+        var strMarkdown = mmd(strHTML);
+        $( this ).html(strMarkdown);
+    }); 
+</script>
+
+{% endblock %}

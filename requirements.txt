@@ -1,0 +1,7 @@
+Flask==0.8
+Flask-Admin==1.0.9
+Flask-Login==0.2.11
+Flask-Mail==0.9.1
+Flask-SQLAlchemy==1.0
+Werkzeug==0.9.4
+Jinja2==2.7.2

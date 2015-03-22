@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block header %}
+<header><a href="/" style="color: black;">EGM.</a></header>
+{% endblock %}
+
+{% block bar %}
+<nav class="top-bar" data-topbar>
+  <section class="top-bar-section">
+    <ul class="center">
+      <li><a href="/about">ABOUT</a></li>
+      <li class="divider">|</li>
+      <li><a href="/work">WORK</a></li>
+      <li class="divider">|</li>
+      <li><a href="/events">EVENTS</a></li>
+      <li class="divider">|</li>
+      <li class="active"><a href="/blog">BLOG</a></li>
+      <li class="divider">|</li>
+      <li><a href="/contact">CONTACT</a></li>
+    </ul>
+  </section>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="large-8 columns large-offset-2 column bio-text">  
+  
+  {% for post in mediaPosts %}
+  <div class="row">
+    
+    <div class="large-6 columns"> 
+      <h3><div id= "blog-title">{{ post.title }}</div></h3>
+      <p>{{ post.created }}</p>
+      <p>{{ post.description }}</p> 
+      <p><div id="blog-content">{{ post.content }}</div></p>
+    </div>
+
+    <div class="large-6 columns">
+      
+      {% if post.video_link %}
+      <a class="th [radius]" href="#">
+        {{ post.video_link|safe }}
+      </a>
+      {% endif %}
+      {% if post.image %}
+      <a class="th [radius]" href="post.image">
+        <img src="post.image" alt="My image">
+      </a>
+      {% endif %}
+    </div>
+
+  </div>
+  {% endfor %}
+</div>
+<script type="text/javascript" charset="utf-8">
+    $('[id=blog-title]').each(function( index ) {
+        var strHTML = $( this ).text();
+        var strMarkdown = mmd(strHTML);
+        $( this ).html(strMarkdown);
+    }); 
+    $('[id=blog-content]').each(function( index ) {
+        var strHTML = $( this ).text();
+        var strMarkdown = mmd(strHTML);
+        $( this ).html(strMarkdown);
+    }); 
+</script>
+
+{% endblock %}

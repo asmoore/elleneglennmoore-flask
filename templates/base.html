@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/static/img/favicon.png">
+  </head>
+    <title>Ellene Glenn Moore</title>
+
+<!-- CSS -->
+<link href="/static/css/foundation.css" rel="stylesheet">
+<link href="/static/css/elleneglennmoore2.css" rel="stylesheet">
+
+<!-- SCRIPTS -->
+<script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+
+<script type='text/javascript' src="/static/js/foundation.min.js"></script>
+<script type="text/javascript" src="/static/js/mmd.min.js"></script>
+
+
+<body>
+
+  <div id="wrapper">
+
+    <div id ="content">
+      <!-- HEADER --> 
+      {% block header %}
+      {% endblock %}
+      
+      <div class="row full-width banner-row" {% block banner_style %}{% endblock %}>
+      </div>
+      
+      {% block bar %}{% endblock %}
+
+      <!-- BODY -->
+
+      <div class="row bottom-row">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div id="footer">
+        Copyright © Ellene Glenn Moore / ElleneGlennMoore.com
+      </div>
+    </footer> 
+
+  </div> 
+</body>
+
+
+</div>
+</html>

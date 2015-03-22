@@ -1,0 +1,211 @@
+/****** general *********/
+.row.full-width {
+    max-width: 100%; 
+    width: 100%;
+}
+
+@font-face
+{
+  font-family: 'Frutiger LT 57';
+  src: url('../fonts/Frutiger LT 57 Condensed.ttf');
+  src: url('../fonts/Frutiger LT 57 Condensed.ttf') format('embedded-opentype'), url('../fonts/Frutiger LT 57 Condensed.ttf') format('tff'), url('../fonts/Frutiger LT 57 Condensed.ttf') format('truetype');
+}
+
+@font-face
+{
+  font-family: 'Bodoni Bold';
+  src: url('../fonts/Bodoni SvtyTwo ITC TT Bold.ttf');
+  src: url('../fonts/Bodoni SvtyTwo ITC TT Bold.ttf') format('embedded-opentype'), url('../fonts/Bodoni SvtyTwo ITC TT Bold.ttf') format('tff'), url('../fonts/Bodoni SvtyTwo ITC TT Bold.ttf') format('truetype');
+}
+
+@font-face
+{
+  font-family: 'Bodoni Book';
+  src: url('../fonts/Bodoni SvtyTwo ITC TT Book.ttf');
+  src: url('../fonts/Bodoni SvtyTwo ITC TT Book.ttf') format('embedded-opentype'), url('../fonts/Bodoni SvtyTwo ITC TT Book.ttf') format('tff'), url('../fonts/Bodoni SvtyTwo ITC TT Book.ttf') format('truetype');
+}
+
+
+html,
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+#wrapper {
+  min-height:100%;
+  position:relative;
+}
+#content {
+  padding-bottom:50px;   /* Height of the footer element */
+}
+#footer {
+  width:100%;
+  margin-top: 20px;
+  height:50px;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+
+p {
+  margin-bottom: 0px;
+  line-height: 110%;
+}
+/****** header *********/
+
+header {
+	background-size: cover;
+	font-family: "Bodoni Book";
+	font-size: 50pt;
+}
+
+.banner-row {
+	background-color: blue;
+	background-size: cover;
+	background: url('../img/banner5.jpg') no-repeat center center;
+	height: 300px;
+	zoom: 50%;
+}
+
+/****** Top-bar *********/
+nav.top-bar {
+	background-color: white;
+	padding-bottom: 70px;
+	padding-top: 5px;
+	text-align:center;
+}
+
+section.top-bar-section {
+	display: inline-block;
+}
+
+.top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
+	background-color: white;
+	border-right: none;
+	color: black;
+	line-height: 45px;
+	width: 10px;
+}
+
+.top-bar-section li.active:not(.has-form) a:not(.button) {
+    background: white;
+    color: black;
+    font-family: "Bodoni Bold";
+    font-size: 18pt;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+    background: white;
+    color: black;
+    font-family: "Bodoni Book";
+    font-size: 19pt;
+}
+
+/****** body **********/
+.bio-image-container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  height: 245px;
+}
+
+#bio {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bio-text > p {
+  font-family: "Frutiger LT 57";
+  font-size: 12.5pt;
+  text-align: justify;
+  line-height: 120%;
+} 
+
+.cv {
+  font-family: "Frutiger LT 57";
+  font-size: 12.5pt;
+  text-align: justify;
+  line-height: 120%;
+} 
+
+.th {
+    -ms-transform: scale(2,4); /* IE 9 */
+    -webkit-transform: scale(2,4); /* Chrome, Safari, Opera */
+    transform: scale(.8,.8);
+}
+
+input[type="submit"] {
+    background-color: black;
+    color: white;
+    border: none;
+}
+#blog-title > p {
+  font-family: "Bodoni Bold";
+  font-size: 15pt;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+h3 {
+    background: white;
+    color: black;
+    font-family: "Bodoni Bold";
+    font-size: 15pt;
+    font-variant:small-caps;     
+    font-weight:bold; 
+}
+
+#work {
+    font-family: "Frutiger LT 57";
+    font-size: 12.5pt;
+    text-align: justify;
+    line-height: 120%;
+    margin-bottom: 5px;
+}
+
+#date-header {
+  font-family: "Frutiger LT 57";
+  font-size: 1rem;
+
+}
+
+#event-title {
+  font-size: 12.5pt;
+  margin: 0 auto; 
+  margin-top: 20px;
+  font-family: "Frutiger LT 57"
+}
+
+#event-description {
+  font-family: "Bodoni Book";
+  color: Gray;
+}
+
+#contact {
+    font-family: "Frutiger LT 57";
+    font-size: 12.5pt;
+    text-align: justify;
+    line-height: 120%;
+    margin-bottom: 5px;
+}
+
+
+/****** footer *********/
+.bottom-row {
+	  background-color: white;
+}
+
+#footer {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-right: 20px;
+    text-align: right;
+    font-family: "Frutiger LT 57";
+    font-size: 8pt;
+    color: LightGray;
+}

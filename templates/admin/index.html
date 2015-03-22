@@ -1,0 +1,64 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+{{ super() }}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/static/img/favicon.png">
+  </head>
+    <title>Ellene Glenn Moore</title>
+
+<!-- CSS -->
+<link href="/static/css/foundation.css" rel="stylesheet">
+<link href="/static/css/elleneglennmoore2.css" rel="stylesheet">
+
+<div class="row-fluid">
+
+    <div>
+        {% if current_user.is_authenticated() %}
+        <body>
+
+          <div id="wrapper">
+
+            <div id ="content">
+              <!-- HEADER --> 
+
+              <h1>Admin</h1>
+
+              
+              <!-- BODY -->
+
+              <div class="row bottom-row">
+              </div>
+            </div>
+
+          </div> 
+        </body>
+         {% else %}
+        <form method="POST" action="">
+            {{ form.hidden_tag() if form.hidden_tag }}
+            {% for f in form if f.type != 'CSRFTokenField' %}
+            <div>
+            {{ f.label }}
+            {{ f }}
+            {% if f.errors %}
+            <ul>
+                {% for e in f.errors %}
+                <li>{{ e }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            </div>
+            {% endfor %}
+            <button class="btn" type="submit">Submit</button>
+        </form>
+        {{ link | safe }}
+        {% endif %}
+    </div>
+</div>
+{% endblock body %}

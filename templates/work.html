@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block header %}
+<header><a href="/" style="color: black;">EGM.</a></header>
+{% endblock %}
+
+{% block bar %}
+<nav class="top-bar" data-topbar>
+  <section class="top-bar-section">
+    <ul class="center">
+      <li><a href="/about">ABOUT</a></li>
+      <li class="divider">|</li>
+      <li class="active"><a href="/work">WORK</a></li>
+      <li class="divider">|</li>
+      <li><a href="/events">EVENTS</a></li>
+      <li class="divider">|</li>
+      <li><a href="/contact">CONTACT</a></li>
+    </ul>
+  </section>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="large-8 columns large-offset-2 column bio-text">  
+
+<h3>Poetry Publications</h3> 
+  {% for work in works %}
+    {% if work.work_type == "PO" %}
+      <div id="work">{{ work.work_text }}</div>
+    {% endif %}
+  {% endfor %}
+<br>
+<h3>Projects & Collaborations</h3>
+  {% for work in works %}
+    {% if work.work_type == "PR" %}
+      <div id="work">{{ work.work_text }}</div>
+    {% endif %}
+  {% endfor %}
+<br>
+<h3>Additional Publications</h3>
+  {% for work in works %}
+    {% if work.work_type == "OT" %}
+      <div id="work">{{ work.work_text }}</div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    $('[id=work]').each(function( index ) {
+        var strHTML = $( this ).text();
+        var strMarkdown = mmd(strHTML);
+        $( this ).html(strMarkdown);
+    }); 
+</script>
+{% endblock %}
